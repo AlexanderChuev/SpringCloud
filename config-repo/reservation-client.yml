@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    reservation-service:
+        path: /foo/**
+        url: reservation-service
+        stripPrefix: false
+        sensitiveHeaders:

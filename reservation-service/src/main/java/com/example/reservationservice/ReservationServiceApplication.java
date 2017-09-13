@@ -1,5 +1,7 @@
 package com.example.reservationservice;
 
+import com.example.reservationservice.model.Reservation;
+import com.example.reservationservice.repository.ReservationRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +18,7 @@ public class ReservationServiceApplication {
     @Bean
     CommandLineRunner runner (ReservationRepository rr){
         return args -> {
-            Arrays.asList("Hello", "world").forEach(x -> rr.save(new Reservation(x)));
+            Arrays.asList("Reservation", "Service").forEach(x -> rr.save(new Reservation(x)));
         rr.findAll().forEach(System.out::println);
         };
     }

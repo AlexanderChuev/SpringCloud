@@ -18,10 +18,4 @@ public class ReservationClientApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ReservationClientApplication.class, args);
 	}
-
-	@Bean
-	@LoadBalanced
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
 }

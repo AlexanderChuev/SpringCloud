@@ -1,4 +1,4 @@
-package com.example.reservationservice;
+package com.example.reservationservice.model;
 
 import lombok.Data;
 
