@@ -1,14 +1,3 @@
-server.port=8000
-
-security:
-  oauth2:
-    client:
-      clientId: reservation-service
-      clientSecret: ${RESERVATION_SERVICE_PASSWORD}
-      accessTokenUri: http://auth-service:8080/uaa/oauth/token
-      grant-type: client_credentials
-      scope: server
-
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArWEceEJkw7Y7P7rleibb
 fp3l4udkyB2aFUBNvS7TVgENJ86X9kIFoWprv0YEDkySg/OBWnd/NDk5eQWzx3z5
