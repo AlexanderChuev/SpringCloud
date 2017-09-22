@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+zuul:
+  routes:
+    reservation-service:
+        path: /foo/**
+        url: reservation-service
+        stripPrefix: false
+        sensitiveHeaders:
+    statistics-service:
+        path: /statistics-service/**
+        url: statistics-service
+        stripPrefix: false
+        sensitiveHeaders:

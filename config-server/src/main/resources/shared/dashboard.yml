@@ -1,0 +1,6 @@
+server:
+  port: 8086  
+
+turbine:
+  app-config: reservation-service,reservation-client,statistics-service
+  clusterNameExpression: 'default'
