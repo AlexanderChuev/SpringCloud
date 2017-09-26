@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "statistics-service")
 public interface StatisticServiceClient {
 
-    @RequestMapping(value = "/stat", method = RequestMethod.GET)
-    String getInfo();
+    @RequestMapping(value = "/reader", method = RequestMethod.GET)
+    String getReaderInfo();
+
+    @RequestMapping(value = "/writer", method = RequestMethod.GET)
+    String getWriterInfo();
 
 }

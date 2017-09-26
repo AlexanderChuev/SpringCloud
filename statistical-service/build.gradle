@@ -31,12 +31,18 @@ ext {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.security:spring-security-config')
 	compile('org.springframework.cloud:spring-cloud-starter-config')
 	compile('org.springframework.cloud:spring-cloud-starter-feign')
 	compile('org.springframework.cloud:spring-cloud-starter-eureka')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 	compile('org.springframework.cloud:spring-cloud-netflix-hystrix-dashboard')
+	compile('org.springframework.security:spring-security-core')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
+
+
 
 }
 

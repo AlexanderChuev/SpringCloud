@@ -5,21 +5,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
-
 @RestController (value = "/statistics-service")
 public class SomeController {
 
-    
-    @RequestMapping(value = "/stat", method = RequestMethod.GET)
-    public String getInfo(){
-        System.out.println("Hi");
-        return UUID.randomUUID().toString();
+   // @PreAuthorize("hasRole('FOO_READ')")
+    @RequestMapping(value = "/reader", method = RequestMethod.GET)
+    public String getReaderInfo(){
+        return "Statistics-service method for reader";
     }
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public void hello(){
-        System.out.println("Hello service");
+    @RequestMapping(value = "/writer", method = RequestMethod.GET)
+    public String hello(){
+        System.out.println("I");
+        return "Statistics-service method for writer";
     }
 
 }

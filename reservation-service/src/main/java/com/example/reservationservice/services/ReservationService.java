@@ -2,5 +2,7 @@ package com.example.reservationservice.services;
 
 public interface ReservationService {
 
-    String getInfo();
+    String getReaderInfo();
+
+    String getWriterInfo();
 }

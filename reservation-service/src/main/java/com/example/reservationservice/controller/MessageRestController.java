@@ -7,25 +7,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/foo")
+@RequestMapping(value = "/foo")
 public class MessageRestController {
 
     @Autowired
     ReservationService reservationService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String readFoo() {
-        return reservationService.getInfo();
+    @PreAuthorize("hasAuthority('FOO_READ')")
+    @RequestMapping(value = "/reader", method = RequestMethod.GET)
+    public String readFoo(HttpServletRequest request) {
+        return reservationService.getReaderInfo();
     }
 
 
     @PreAuthorize("hasAuthority('FOO_WRITE')")
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/writer", method = RequestMethod.GET)
     public String writeFoo() {
-        return "write foo " + UUID.randomUUID().toString();
+        return reservationService.getWriterInfo();
     }
 
 }
